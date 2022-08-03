@@ -1,0 +1,36 @@
+<script>
+    export let className;
+    export let tekst = '';
+    let clazz;
+
+    export {clazz as klasa};
+</script>
+
+<button type="button" class="btn btn-{className} + {clazz}">
+    {tekst}
+    <slot></slot>
+</button>
+
+<style lang="postcss">
+
+    .btn{
+       @apply h-10 px-6 py-2 rounded-lg text-sm font-semibold bg-gray-300 text-gray-800 whitespace-nowrap inline-flex items-center transition-colors antialiased;
+       @apply hover:bg-opacity-80 focus:bg-opacity-80 focus:outline-none focus:ring focus:border-blue-300;
+    }
+    .btn-success{
+        @apply bg-green-700 text-white;
+    }
+    .btn-warning{
+        @apply bg-yellow-500 text-white;
+    }
+    .btn-primary{
+        @apply bg-blue-700 text-white;
+    }
+    .btn-info{
+        @apply bg-blue-400 text-white;
+    }
+    .btn-danger{
+        @apply bg-red-700 text-white;
+    }
+
+</style>
